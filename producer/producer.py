@@ -1,11 +1,15 @@
 from kafka import KafkaProducer
 import csv
 
+# Configurando o produtor Kafka
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
 
-with open('vendas.csv', 'r') as file:
-    reader = csv.reader(file)
+# Abrindo o arquivo vendas.csv para leitura
+with open('producer/vendas.csv', 'r') as file:
+    reader = csv.reader(file)  # Definindo o leitor CSV
     for row in reader:
+        # Enviando a linha como mensagem para o tópico 'vendas'
         producer.send('vendas', value=str(row).encode('utf-8'))
 
+# Garantindo que todas as mensagens foram enviadas
 producer.flush()
