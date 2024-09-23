@@ -16,22 +16,22 @@ Projeto Kafka – Pós Graduação Mackenzie
 
 1. Execute o comando abaixo para subir os containers Docker:
 
-bash docker-compose up
+``bash docker-compose up``
 
 2. Para rodar o Producer e enviar os dados do arquivo CSV, execute:
    
-python3 producer/producer.py
+``python3 producer/producer.py``
 
 3. Para rodar o Consumer e receber as mensagens do tópico, execute:
    
-python3 consumer/consumer.py
+``python3 consumer/consumer.py``
 
 4. O arquivo vendas.csv tem o seguinte formato:
 
-produto,quantidade,preco
+``produto,quantidade,preco
 produto1,10,100
 produto2,5,50
-produto3,20,200
+produto3,20,200``
 
 
 
