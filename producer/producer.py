@@ -10,6 +10,10 @@ with open('producer/vendas.csv', 'r') as file:
     for row in reader:
         # Enviando a linha como mensagem para o tópico 'vendas'
         producer.send('vendas', value=str(row).encode('utf-8'))
+        print(f'Mensagem enviada: {row}')  # Adiciona o print para verificar as mensagens enviadas
 
 # Garantindo que todas as mensagens foram enviadas
 producer.flush()
+
+# Fechando o producer
+producer.close()
